@@ -1,0 +1,2 @@
+﻿PerformanceOfSomething.Lib.Class1
+PerformanceOfSomething.Lib.Class1.Class1() -> void

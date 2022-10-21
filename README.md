@@ -11,6 +11,8 @@ dotnet new xunit -f net7.0 -o tests/PerformanceOfSomething.Tests
 ## Add Analyser packages
 
 Add common packages to help improve code quality and avoid common pitfalls.
+* [learn.microsoft.com](https://learn.microsoft.com/en-us/visualstudio/code-quality/roslyn-analyzers-overview?view=vs-2022)
+* [awesome-analyzers](https://github.com/Cybermaxs/awesome-analyzers)
 
 ### Lib
 
