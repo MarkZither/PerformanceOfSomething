@@ -74,9 +74,11 @@
             "enum": [
               "Clean",
               "Compile",
+              "Coverage",
               "Restore",
               "Sonar",
-              "SonarPr"
+              "SonarPr",
+              "Test"
             ]
           }
         },
@@ -99,11 +101,16 @@
             "enum": [
               "Clean",
               "Compile",
+              "Coverage",
               "Restore",
               "Sonar",
-              "SonarPr"
+              "SonarPr",
+              "Test"
             ]
           }
+        },
+        "TestPartition": {
+          "type": "string"
         },
         "Verbosity": {
           "type": "string",
