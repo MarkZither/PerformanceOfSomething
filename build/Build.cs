@@ -24,7 +24,7 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 [GitHubActions(
     "sonar",
     GitHubActionsImage.UbuntuLatest,
-    On = new[] { GitHubActionsTrigger.PullRequest },
+    On = new[] { GitHubActionsTrigger.WorkflowDispatch },
     InvokedTargets = new[] { nameof(Sonar) })]
 public partial class Build : NukeBuild
 {
