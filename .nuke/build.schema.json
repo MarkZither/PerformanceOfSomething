@@ -74,13 +74,21 @@
             "enum": [
               "Clean",
               "Compile",
-              "Restore"
+              "Restore",
+              "Sonar",
+              "SonarPr"
             ]
           }
         },
         "Solution": {
           "type": "string",
           "description": "Path to a solution file that is automatically loaded"
+        },
+        "SonarServer": {
+          "type": "string"
+        },
+        "SonarToken": {
+          "type": "string"
         },
         "Target": {
           "type": "array",
@@ -90,7 +98,9 @@
             "enum": [
               "Clean",
               "Compile",
-              "Restore"
+              "Restore",
+              "Sonar",
+              "SonarPr"
             ]
           }
         },

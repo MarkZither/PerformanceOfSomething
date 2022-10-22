@@ -18,6 +18,7 @@ Add common packages to help improve code quality and avoid common pitfalls.
 
 ``` console
 dotnet add package Microsoft.CodeAnalysis.NetAnalyzers --version 6.0.0
+dotnet add package Microsoft.CodeAnalysis.PublicApiAnalyzers --version 3.3.4-beta1.22464.1
 ```
 
 ### Tests
@@ -41,3 +42,8 @@ Analyzers can be relevant across all projects so can be added  in a props file.
 
 ## Add .editorconfig
 Using .editorconfig helps bring consistency to coding style.
+
+# Configure External Tools
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=MarkZither_PerformanceOfSomething&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=MarkZither_PerformanceOfSomething)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=MarkZither_PerformanceOfSomething&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=MarkZither_PerformanceOfSomething)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=MarkZither_PerformanceOfSomething&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=MarkZither_PerformanceOfSomething)
