@@ -11,12 +11,12 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <WarningsNotAsErrors>SA0001</WarningsNotAsErrors>
-    <NoWarn>1701;1702;SA0001</NoWarn>
+    <NoWarn>1701;1702;SA0001;SA1200</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <WarningsNotAsErrors>SA0001</WarningsNotAsErrors>
-    <NoWarn>1701;1702;SA0001</NoWarn>
+    <NoWarn>1701;1702;SA0001;SA1200</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,7 +28,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoBogus.NSubstitute" Version="2.13.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+    <PackageReference Include="NSubstitute" Version="4.4.0" />
+    <PackageReference Include="NSubstitute.Analyzers.CSharp" Version="1.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="xunit.analyzers" Version="1.0.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">

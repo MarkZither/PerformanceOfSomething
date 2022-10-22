@@ -2,6 +2,8 @@
 // Copyright (c) MarkZither. All rights reserved.
 // </copyright>
 
+using PerformanceOfSomething.Lib;
+
 namespace PerformanceOfSomething.Tests;
 
 /// <summary>
@@ -10,11 +12,34 @@ namespace PerformanceOfSomething.Tests;
 public class UnitTest1
 {
     /// <summary>
-    /// Placeholder test
+    /// Placeholder test.
     /// </summary>
     [Fact]
-    public void Test1()
+    public void ReturnBool_Returns_True_When_Given_True()
     {
-        Assert.True(true);
+        // Arrange
+
+        // Act
+        var inTrue = true;
+        var retBool = Class1.ReturnBool(inTrue);
+
+        // Assert
+        Assert.True(retBool);
+    }
+
+    /// <summary>
+    /// Placeholder test.
+    /// </summary>
+    [Fact]
+    public void ReturnBool_Returns_True_When_Given_False()
+    {
+        // Arrange
+
+        // Act
+        var inFalse = false;
+        var retBool = Class1.ReturnBool(inFalse);
+
+        // Assert
+        Assert.True(retBool);
     }
 }
