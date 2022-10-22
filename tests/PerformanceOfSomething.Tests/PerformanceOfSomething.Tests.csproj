@@ -41,4 +41,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\PerformanceOfSomething.Lib\PerformanceOfSomething.Lib.csproj" />
+  </ItemGroup>
+
 </Project>
