@@ -88,7 +88,8 @@
           "type": "string"
         },
         "SonarToken": {
-          "type": "string"
+          "type": "string",
+          "default": "Secrets must be entered via 'nuke :secrets [profile]'"
         },
         "Target": {
           "type": "array",

@@ -11,7 +11,7 @@ using System.Diagnostics;
 // originally based on https://github.com/VijayakumarKupusamy/hc12.0.9/blob/87f0be40bb0a60d0ba50901ce8875bfd255608f5/hotchocolate-12.9.0/.build/Build.Sonar.cs
 public partial class Build
 {
-    [Parameter] readonly string SonarToken;
+    [Parameter][Secret] readonly string SonarToken;
     [Parameter] readonly string SonarServer = "https://sonarcloud.io";
 
     Target SonarPr => _ => _

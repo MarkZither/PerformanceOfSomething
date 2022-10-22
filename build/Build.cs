@@ -25,7 +25,8 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
     "sonar",
     GitHubActionsImage.UbuntuLatest,
     On = new[] { GitHubActionsTrigger.WorkflowDispatch },
-    InvokedTargets = new[] { nameof(Sonar) })]
+    InvokedTargets = new[] { nameof(Sonar) },
+    ImportSecrets = new[] { nameof(SonarToken) })]
 public partial class Build : NukeBuild
 {
     /// Support plugins are available for:

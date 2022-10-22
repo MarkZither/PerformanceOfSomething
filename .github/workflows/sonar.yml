@@ -33,3 +33,5 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
       - name: Run './build.cmd Sonar'
         run: ./build.cmd Sonar
+        env:
+          SonarToken: ${{ secrets.SONAR_TOKEN }}
