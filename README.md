@@ -44,6 +44,11 @@ Analyzers can be relevant across all projects so can be added  in a props file.
 Using .editorconfig helps bring consistency to coding style.
 
 # Configure External Tools
+
+## Sonarqube
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=MarkZither_PerformanceOfSomething&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=MarkZither_PerformanceOfSomething)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=MarkZither_PerformanceOfSomething&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=MarkZither_PerformanceOfSomething)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=MarkZither_PerformanceOfSomething&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=MarkZither_PerformanceOfSomething)
+
+## GitHub Actions
+[![continuous](https://github.com/MarkZither/PerformanceOfSomething/actions/workflows/continuous.yml/badge.svg)](https://github.com/MarkZither/PerformanceOfSomething/actions/workflows/continuous.yml)
