@@ -1,3 +1,5 @@
 ﻿PerformanceOfSomething.Lib.Class1
 PerformanceOfSomething.Lib.Class1.Class1() -> void
+PerformanceOfSomething.Lib.Configuration.PerformanceOfSomethingOptions
+PerformanceOfSomething.Lib.Configuration.PerformanceOfSomethingOptions.PerformanceOfSomethingOptions() -> void
 static PerformanceOfSomething.Lib.Class1.ReturnBool(bool boolIn) -> bool
