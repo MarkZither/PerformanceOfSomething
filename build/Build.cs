@@ -28,7 +28,7 @@ using static Nuke.Common.Tools.ReportGenerator.ReportGeneratorTasks;
     "continuous",
     GitHubActionsImage.UbuntuLatest,
     On = new[] { GitHubActionsTrigger.Push },
-    InvokedTargets = new[] { nameof(Test) })]
+    InvokedTargets = new[] { nameof(Test ) })]
 [GitHubActions(
     "sonar",
     GitHubActionsImage.UbuntuLatest,
@@ -97,7 +97,12 @@ public partial class Build : NukeBuild
                     .SetNoBuild(InvokedTargets.Contains(Compile))
                     .ResetVerbosity()
                     .SetResultsDirectory(TestResultDirectory)
+                    .SetDataCollector("XPlat Code Coverage")
+                    .EnableCollectCoverage()
+                    .SetCoverletOutputFormat(CoverletOutputFormat.cobertura)
+                    .SetCoverletOutput(TestResultDirectory / $"blah.xml")
                     .When(InvokedTargets.Contains(Coverage) || IsServerBuild, _ => _
+                        .SetProcessArgumentConfigurator(a => a.Add("--collect:\"XPlat Code Coverage\""))
                         .EnableCollectCoverage()
                         .SetCoverletOutputFormat(CoverletOutputFormat.cobertura)
                         .SetExcludeByFile("*.Generated.cs")
@@ -105,7 +110,7 @@ public partial class Build : NukeBuild
                             .EnableUseSourceLink()))
                     .CombineWith(TestProjects, (_, v) => _
                         .SetProjectFile(v)
-                        .SetLoggers($"trx;LogFileName={v.Name}.trx")
+                        .SetLoggers($"trx;LogFileName={v.Name}.trx", "html;LogFileName=foo.html")
                         .SetCoverletOutput(TestResultDirectory / $"{v.Name}.xml")));
 
                 TestResultDirectory.GlobFiles("*.trx").ForEach(x =>

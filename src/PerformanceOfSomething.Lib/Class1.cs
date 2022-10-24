@@ -2,6 +2,10 @@
 // Copyright (c) MarkZither. All rights reserved.
 // </copyright>
 
+using System.Xml.Linq;
+using Dawn;
+using Microsoft.Extensions.Logging;
+
 namespace PerformanceOfSomething.Lib;
 
 /// <summary>
@@ -9,12 +13,15 @@ namespace PerformanceOfSomething.Lib;
 /// </summary>
 public class Class1
 {
+    private readonly ILogger<Class1> logger;
+
     /// <summary>
     /// Initializes a new instance of the <see cref="Class1"/> class.
-    /// ctor.
     /// </summary>
-    protected Class1()
+    /// <param name="logger">A logger.</param>
+    public Class1(ILogger<Class1> logger)
     {
+        this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
     /// <summary>
@@ -22,8 +29,10 @@ public class Class1
     /// </summary>
     /// <param name="boolIn">the bool that will be returned.</param>
     /// <returns>a bool.</returns>
-    public static bool ReturnBool(bool boolIn)
+    public bool ReturnBool(bool boolIn)
     {
+        Guard.Argument(boolIn, nameof(boolIn)).True();
+        this.logger.LogInformation("The bool was {boolIn}", boolIn);
         return true;
     }
 }

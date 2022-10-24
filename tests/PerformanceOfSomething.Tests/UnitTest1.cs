@@ -2,6 +2,12 @@
 // Copyright (c) MarkZither. All rights reserved.
 // </copyright>
 
+using FluentAssertions;
+
+using Microsoft.Extensions.Logging;
+
+using NSubstitute;
+
 using PerformanceOfSomething.Lib;
 
 namespace PerformanceOfSomething.Tests;
@@ -18,10 +24,12 @@ public class UnitTest1
     public void ReturnBool_Returns_True_When_Given_True()
     {
         // Arrange
+        var logger = Substitute.For<ILogger<Class1>>();
+        var class1 = new Class1(logger);
 
         // Act
         var inTrue = true;
-        var retBool = Class1.ReturnBool(inTrue);
+        var retBool = class1.ReturnBool(inTrue);
 
         // Assert
         Assert.True(retBool);
@@ -31,15 +39,17 @@ public class UnitTest1
     /// Placeholder test.
     /// </summary>
     [Fact]
-    public void ReturnBool_Returns_True_When_Given_False()
+    public void ReturnBool_Throws_ArgumentException_When_Given_False()
     {
         // Arrange
+        var logger = Substitute.For<ILogger<Class1>>();
+        var sut = new Class1(logger);
 
         // Act
         var inFalse = false;
-        var retBool = Class1.ReturnBool(inFalse);
+        Action act = () => sut.ReturnBool(inFalse);
 
         // Assert
-        Assert.True(retBool);
+        act.Should().ThrowExactly<ArgumentException>().WithMessage("boolIn must be true. (Parameter 'boolIn')");
     }
 }
